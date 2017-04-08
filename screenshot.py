@@ -1,3 +1,5 @@
+__author__ = 'duduscript'
+
 from sys import argv
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
