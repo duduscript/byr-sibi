@@ -2,7 +2,7 @@
 ```sh
 $ export BYR_ID='your byrbbs ID'
 $ export BYR_PWD='your byrbbs password'
-$ python screenshot.py url
+$ python3 screenshot.py url
 ```
 
 ### example:
