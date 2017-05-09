@@ -9,7 +9,7 @@ from PIL import Image
 
 def fullpage_screenshot(driver, file):
     print("Starting chrome full page screenshot workaround ...")
-    
+
     total_width = driver.execute_script("return document.body.offsetWidth")
     total_height = driver.execute_script("return document.body.parentNode.scrollHeight")
     viewport_width = driver.execute_script("return document.body.clientWidth")
@@ -30,12 +30,11 @@ def fullpage_screenshot(driver, file):
 
             if top_width > total_width:
                 top_width = total_width
-            
+
             print("Appending rectangle ({0},{1},{2},{3})".format(ii, i, top_width, top_height))
             rectangles.append((ii, i, top_width,top_height))
 
             ii = ii + viewport_width
-        
         i = i + viewport_height
 
     stitched_image = Image.new('RGB', (total_width, total_height))
@@ -89,7 +88,6 @@ def merge(img_paths,path):
             final_img.paste(img,(x,y))
             y += height
     final_img.save(path)
-    
 
 class User(object):
     def __init__(self,username,password):
@@ -146,6 +144,6 @@ if __name__ == '__main__':
     password = os.environ.get('BYR_PWD')
     print(username,password)
     user = User(username,password)
-    crawler = Crawler() 
+    crawler = Crawler()
     crawler.login(user)
     crawler.travel(argv[1])
