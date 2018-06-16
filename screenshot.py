@@ -136,6 +136,10 @@ class Crawler(object):
 
     def fullpage_screenshot(self,filename):
         fullpage_screenshot(self.driver,filename)
+        
+    def close(self):
+        """close current window."""
+        self.driver.close()
 
 
 
@@ -147,3 +151,4 @@ if __name__ == '__main__':
     crawler = Crawler()
     crawler.login(user)
     crawler.travel(argv[1])
+    crawler.close()
